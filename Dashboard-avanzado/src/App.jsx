@@ -15,17 +15,17 @@ import { Layout } from "./pages/Layout";
 function App() {
   return (
     <>
+      <Router>
       <Layout>
         <Inicio />
       </Layout>
-      {/* <Router>
   <Routes>
-          <Route path="/" element={<Inicio/>}/>
+          {/* <Route path="/" element={<Inicio/>}/>
           <Route path="/login" element={<Login />}/>
-          <Route path="*" element={<Login />}/>
+          <Route path="*" element={<Login />}/> */}
          
   </Routes>
-  </Router> */}
+  </Router>
     </>
   );
 }

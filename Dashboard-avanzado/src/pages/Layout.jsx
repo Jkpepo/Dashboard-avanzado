@@ -1,12 +1,17 @@
 import { Navbar } from "./Navbar/Navbar";
+import { SideBar } from "./SideBar";
+
 
 
 export function Layout({children}){
     return(
         <div className="flex w-full h-full">
-            <div className=" hidden xl:block w-80 h-full xl:fixed ">
-              asdasdasdasaaaaaaaaaaaa
+            <div className="  sm:hidden xl:block w-80 h-full xl:fixed lg:block ">
+                <div className="sm:hidden">
 
+                </div>
+
+            <SideBar/>
             </div>
         
         <div className="w-full xl:ml-80">
