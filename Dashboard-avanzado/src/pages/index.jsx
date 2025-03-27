@@ -1,6 +1,7 @@
 import { CardSumary } from "../componentsApp/CardSumary";
 
 import { UsersRound, User, ChartColumn, CalendarFold } from "lucide-react";
+import { Grafics } from "./Grafics";
 
 export function Inicio() {
   return (
@@ -13,6 +14,11 @@ export function Inicio() {
         {<CardSumary icon={CalendarFold} title="Calendario" total="" />}
         
       </div>
+      <div className="grid grid-cols-1 mt-12  xl:grid-cols-2 md:gap-x-10  ">
+  <Grafics/>
+    <p>GraficosxD</p>
+      </div>
+    
     </div>
   );
 }

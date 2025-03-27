@@ -1,5 +1,6 @@
 import { useUser, RedirectToSignIn, SignedOut, SignInButton, SignedIn, UserButton } from '@clerk/clerk-react';
 import { Inicio } from '../pages';
+import { Layout } from '../pages/Layout';
 
 
 
@@ -18,8 +19,8 @@ function Login() {
 
   return (
     <div>
-        <Inicio></Inicio>
-    <h1>Bienvenid@, {user.firstName}!</h1>
+        <Layout></Layout>
+    {/* <h1>Bienvenid@, {user.firstName}!</h1> */}
     {/* <SignedOut>
     <p>You are signed out.</p>
         <SignInButton/>
