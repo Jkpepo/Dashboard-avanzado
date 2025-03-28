@@ -3,6 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.sidebar-container {
+  display: none;
+}
+
+
+@media (min-width: 1024px) {
+  .sidebar-container {
+    display: block;
+  }
+}
+
+
+@media (min-width: 1280px) {
+  .sidebar-container {
+    width: 320px; 
+    height: 100%; 
+    position: fixed; 
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

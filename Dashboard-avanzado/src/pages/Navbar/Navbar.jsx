@@ -16,7 +16,9 @@ export function Navbar() {
       <div className="sm:block">
         <Sheet open={isOpen} onOpenChange={handleSheetChange}>
           <SheetTrigger className="flex items-center">
+            
             <Menu className="lg:hidden h-8 w-8" />
+          
           </SheetTrigger>
 
           <SheetContent side="left">

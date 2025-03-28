@@ -1,5 +1,5 @@
 import { useUser, RedirectToSignIn, SignedOut, SignInButton, SignedIn, UserButton } from '@clerk/clerk-react';
-import { Inicio } from '../pages';
+
 import { Layout } from '../pages/Layout';
 
 
