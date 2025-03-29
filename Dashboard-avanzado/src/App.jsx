@@ -13,6 +13,7 @@ import "./App.css";
 import { Layout } from "./pages/Layout";
 import { PokemonProvider } from "./context/UseContext";
 import { ListPokemons } from "./componentsApp/ListPokemons";
+import { PokemonDetails } from "./componentsApp/PokemonDetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Layout><Index /></Layout>} />
         <Route path="/companies" element={<Layout><ListPokemons /></Layout> } />
         <Route path="/calendar" element={<Layout><List /></Layout> } />
+        <Route path="/calendar/:id" element={<Layout><PokemonDetails /></Layout> } />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>

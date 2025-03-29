@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import { useContext } from "react";
 import { PokemonContext } from "../context/UseContext";
 import { CustomIcon } from "../componentsApp/CustomIcons";
@@ -10,7 +11,7 @@ export function ListPokemons() {
     <div className=" bg-background rounded-lg w-auto shadow-sm bg-background rounded-lg p-5  ">
       <CustomIcon icon={List} />
 
-      {pokemons.map((pokemon) => (
+      {pokemons.map((pokemon,id) => (
         <div
           key={pokemon.name}
           className=" m-2   shadow-sm bg-background rounded-lg p-5 py-3 hover:shadow-lg transition "
@@ -24,10 +25,10 @@ export function ListPokemons() {
                 alt={pokemon.name}
               />
 
-              {pokemon.name}
+              <Link to={`calendar/${pokemon.url.split("/")[6]}`}>{pokemon.name}</Link>
             </div>
             <div className="flex gap-4 ">
-              <p className=" "> otro dato</p>
+              <p className=" ">{pokemon.types}</p>
             </div>
           </div>
         </div>
