@@ -1,8 +1,9 @@
 import { CardSumary } from "../componentsApp/CardSumary";
 
 import { UsersRound, User, ChartColumn, CalendarFold } from "lucide-react";
-import { Grafics } from "./Grafics";
+import SpiderChart from "../componentsApp/SpiderChart";
 import { ListPokemons } from "../componentsApp/ListPokemons";
+import { PokemonContext } from "../context/UseContext";
 
 export function Index() {
   return (
@@ -18,7 +19,8 @@ export function Index() {
       </div>
       <div className="mt-12 grid grid-col-1 md:grid-cols-2 w-min-300  gap-3 lg:gap-x-5">
         {<ListPokemons/>}
-        {<Grafics />}
+        
+        {<SpiderChart />}
         
         
       </div>

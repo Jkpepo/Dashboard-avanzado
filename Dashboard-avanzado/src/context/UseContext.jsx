@@ -42,6 +42,7 @@ export function PokemonProvider({children}){
     pokemonsPerPage,
     nextPagePokemon,
     prevPagePokemon,
+    
     }}>
 
     {children}

@@ -60,7 +60,7 @@ const SpiderChart = () => {
       setSound(data.cries?.latest || null);
       
       if (data.cries?.latest) {
-        new Audio(data.cries.latest).play();
+        new Audio(data.cries.latest)
       }
 
       const speciesResponse = await fetch(data.species.url);
@@ -102,7 +102,7 @@ const SpiderChart = () => {
   };
 
   return (
-    <div className="p-6 shadow-lg bg-gray-900 text-white rounded-lg max-w-3xl mx-auto">
+    <div className="shadow-sm bg-background rounded-lg p-5">
       <h2 className="text-2xl font-semibold mb-4 text-center">Estadísticas de Pokémon</h2>
       
       <div className="mb-4 flex justify-center">
@@ -130,9 +130,9 @@ const SpiderChart = () => {
         <div className="w-3/4">
           <ResponsiveContainer width="100%" height={400}>
             <RadarChart outerRadius="70%" data={stats}>
-              <PolarGrid stroke="white" />
-              <PolarAngleAxis dataKey="stat" tick={{ fill: "white", fontSize: 12 }} />
-              <PolarRadiusAxis tick={{ fill: "white", fontSize: 10 }} />
+              <PolarGrid stroke="gray" />
+              <PolarAngleAxis dataKey="stat" tick={{ fill: "gray", fontSize: 12 }} />
+              <PolarRadiusAxis tick={{ fill: "blue", fontSize: 10 }} />
               <Radar name={pokemon.toUpperCase()} dataKey="value" stroke={color} fill={color} fillOpacity={0.7} />
             </RadarChart>
           </ResponsiveContainer>
