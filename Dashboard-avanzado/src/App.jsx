@@ -15,6 +15,7 @@ import { Layout } from "./pages/Layout";
 import { PokemonProvider } from "./context/UseContext";
 import { ListPokemons } from "./componentsApp/ListPokemons";
 import { PokemonDetails } from "./componentsApp/PokemonDetails";
+import PokemonRanking from "./components/ui/PokeRanking";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/companies" element={<Layout><ListPokemons /></Layout> } />
         <Route path="/calendar" element={<Layout><List /></Layout> } />
         <Route path="/calendar/:id" element={<Layout><PokemonDetails/></Layout> } />
+        <Route path="/poke-rang" element={<Layout><PokemonRanking/></Layout> } />
         <Route path="/login" element={<Login />} />
         <Route path="/spider-chart" element={<Layout><SpiderChart /></Layout>} />
       </Routes>
