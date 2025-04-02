@@ -3,11 +3,16 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { motion } from "framer-motion";
 
 const PokemonTypeStats = () => {
+  // Estado para almacenar el tipo de Pokémon seleccionado
   const [type, setType] = useState("electric");
+  // Estado para almacenar las estadísticas promedio de los Pokémon de ese tipo
   const [stats, setStats] = useState([]);
+  // Estado para definir el color del gráfico según el tipo de Pokémon
   const [color, setColor] = useState("#F1C40F");
+  // Estado para contar cuántos Pokémon tienen este tipo
   const [pokemonCount, setPokemonCount] = useState(0); 
 
+  // Colores asociados a cada tipo de Pokémon
   const typeColors = {
     fire: "#FF5733", water: "#3498DB", grass: "#2ECC71", electric: "#F1C40F",
     psychic: "#E91E63", ice: "#00BFFF", dragon: "#8E44AD", dark: "#2C3E50",
@@ -17,25 +22,30 @@ const PokemonTypeStats = () => {
   };
 
   useEffect(() => {
+    // Función para obtener estadísticas promedio de los Pokémon de un tipo
     const fetchTypeStats = async () => {
       try {
         const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
         const data = await response.json();
 
-        
+        // Guardar la cantidad total de Pokémon de este tipo
         setPokemonCount(data.pokemon.length);
 
+        // Obtener solo los primeros 50 Pokémon del tipo
         const pokemonList = data.pokemon.slice(0, 50).map(p => p.pokemon.name); 
 
-        const statsSum = {};
-        let count = 0;
+        const statsSum = {}; // Objeto para acumular estadísticas
+        let count = 0; // Contador de Pokémon analizados
 
+        // Obtener la información detallada de cada Pokémon
         const pokemonPromises = pokemonList.map(pokemon => 
           fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then(res => res.json())
         );
         
+        // Esperar todas las respuestas de los Pokémon
         const pokemonDataArray = await Promise.all(pokemonPromises);
 
+        // Procesar las estadísticas de cada Pokémon
         pokemonDataArray.forEach(pokeData => {
           pokeData.stats.forEach(stat => {
             if (!statsSum[stat.stat.name]) {
@@ -46,13 +56,14 @@ const PokemonTypeStats = () => {
           count++;
         });
 
+        // Calcular el promedio de estadísticas
         const avgStats = Object.keys(statsSum).map(stat => ({
           name: stat.replace("-", " "),
           value: Math.round(statsSum[stat] / count),
         }));
 
         setStats(avgStats);
-        setColor(typeColors[type] || "#FFD700");
+        setColor(typeColors[type] || "#FFD700"); // Asignar color según el tipo
       } catch (error) {
         console.error("Error al obtener datos del tipo de Pokémon:", error);
         setStats([]);
@@ -60,7 +71,7 @@ const PokemonTypeStats = () => {
     };
 
     fetchTypeStats();
-  }, [type]);
+  }, [type]); // Se ejecuta cada vez que cambia el tipo seleccionado
 
   return (
     <motion.div 
@@ -74,6 +85,7 @@ const PokemonTypeStats = () => {
       </h2>
       <p className="text-center text-lg font-bold text-yellow-300">Tipo: {type.toUpperCase()}</p>
 
+      {/* Selector de tipo de Pokémon */}
       <div className="mb-4 flex justify-center">
         <motion.select
           className="border rounded-md px-4 py-2 bg-gray-800 text-white hover:bg-gray-700 transition-all duration-300"
@@ -87,6 +99,7 @@ const PokemonTypeStats = () => {
         </motion.select>
       </div>
 
+      {/* Gráfico de barras con estadísticas promedio */}
       <motion.div 
         className="w-full"
         initial={{ opacity: 0 }}
@@ -104,6 +117,7 @@ const PokemonTypeStats = () => {
         </ResponsiveContainer>
       </motion.div>
 
+      {/* Mostrar la cantidad de Pokémon del tipo seleccionado */}
       <div className="mt-4 text-center text-lg text-yellow-300">
         <p>Cantidad de Pokémon que pueden usar este tipo: <span className="font-bold">{pokemonCount}</span></p>
       </div>
