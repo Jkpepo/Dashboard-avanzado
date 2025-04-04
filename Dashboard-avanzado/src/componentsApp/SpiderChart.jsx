@@ -102,7 +102,7 @@ const SpiderChart = () => {
   };
 
   return (
-    <div className="shadow-sm bg-background rounded-lg p-5">
+    <div className="shadow-sm bg-background rounded-lg p-5 dark:bg-gray-700">
       <h2 className="text-2xl font-semibold mb-4 text-center">Estadísticas de Pokémon</h2>
       
       <div className="mb-4 flex justify-center">
@@ -121,7 +121,7 @@ const SpiderChart = () => {
           <motion.img
             src={image}
             alt={pokemon}
-            className="w-32 h-32 object-contain bg-white rounded-full shadow-lg p-2"
+            className="w-32 h-32 object-contain bg-white rounded-full shadow-lg p-2  dark:bg-gray-600"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 0.5, repeat: 1 }}
           />
@@ -132,7 +132,7 @@ const SpiderChart = () => {
             <RadarChart outerRadius="70%" data={stats}>
               <PolarGrid stroke="gray" />
               <PolarAngleAxis dataKey="stat" tick={{ fill: "gray", fontSize: 12 }} />
-              <PolarRadiusAxis tick={{ fill: "blue", fontSize: 10 }} />
+              <PolarRadiusAxis tick={{ fill: "black", fontSize: 10 }} />
               <Radar name={pokemon.toUpperCase()} dataKey="value" stroke={color} fill={color} fillOpacity={0.7} />
             </RadarChart>
           </ResponsiveContainer>

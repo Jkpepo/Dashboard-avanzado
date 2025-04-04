@@ -9,12 +9,12 @@ export function SideBarItem({ item, closeSheet }) {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-900">
       <Link
         to={href}
         onClick={handleClick} 
         className={cn(
-          "flex gap-x-2 mr-2 light:text-slate-700 dark:text-white text-sm items-center hover:bg-slate-300/20 p-2 rounded-lg cursor-pointer"
+          "flex gap-x-2 mr-2 light:text-slate-700 dark:bg-gray text-sm items-center hover:bg-slate-300/20 p-2 rounded-lg cursor-pointer"
         )}
       >
         <Icon className="h-5 w-5" />

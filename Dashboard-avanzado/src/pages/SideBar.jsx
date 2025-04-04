@@ -8,7 +8,7 @@ import {Separator} from "@/components/ui/Separator"
 
 export function SideBar() {
   return (
-    <div className="flex flex-col justify-between h-full border">
+    <div className=" flex flex-col justify-between h-full border dark:bg-gray-900  ">
       <div>
         <div className="p-2 md:p-6">
           <p>logo</p>
