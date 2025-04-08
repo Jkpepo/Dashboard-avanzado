@@ -27,14 +27,14 @@ export function ChangeTheme(){
     
 
     const handleChangeTheme=()=>{
-        setTheme(prevTheme => prevTheme === "ligth" ? "dark" : "ligth")
+        setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
         
     }
 
     return(
         <div className="dark:bg-neutral-900">
 
-        <button className="bg-slate-200 px-4 py-2 rounded hover:bg-slate-300 hover:cursor-pointer dark:bg-neutral-700"
+        <button className=" px-4 py-2 rounded hover:bg-slate-300 hover:cursor-pointer border"
         onClick={handleChangeTheme}
         >  
         {theme === "dark" ? <Sun/> : <Moon/>  }

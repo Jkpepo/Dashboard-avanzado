@@ -1,24 +1,20 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { ContainerFaqs } from "./ContainerFaqs";
 
 export function Faqs() {
   return (
-    <div className="text-xl font-bold max-w-prose dark:bg-gray-900 text-slate-100">
-      <h1>Prguntas frecuentes</h1>
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>¿ Qué es Pokémon?</AccordionTrigger>
-          <AccordionContent>
-            Pokémon es una franquicia de medios creada por Satoshi Tajiri y Ken Sugimori,que incluye
-            videojuegos,juegos de cartas,series de televisión,películas, y más.En el mundo Pokémon,los entrenadores
-            capturan y entrenan criaturas llamadas "Pokémon" para luchar en combates.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
+
+    
+    
+
+  <div className="mt-8  p-4 m-auto  max-w-prose rounded-lg  bg-gray-200 dark:bg-gray-700 text-2xl font-bold  dark:text-slate-100 ">
+    <h1 className="mb-4 text-center border-b border-black dark:border-white m-4 p-2">
+      Preguntas frecuentes
+    </h1>
+    <ContainerFaqs />
+  </div>
+
+      
+    
+      
   );
 }

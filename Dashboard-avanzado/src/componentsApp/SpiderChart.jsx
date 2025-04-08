@@ -102,14 +102,14 @@ const SpiderChart = () => {
   };
 
   return (
-    <div className="shadow-sm bg-background rounded-lg p-5 dark:bg-gray-700">
+    <div className="shadow-sm bg-gray-200  rounded-lg p-5 dark:bg-gray-700">
       <h2 className="text-2xl font-semibold mb-4 text-center">Estadísticas de Pokémon</h2>
       
       <div className="mb-4 flex justify-center">
         <input
           type="text"
           placeholder="Buscar Pokémon..."
-          className="border rounded-md px-4 py-2 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          className="border rounded-md px-4 py-2 bg-gray-300 text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-yellow-500"
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}

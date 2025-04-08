@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/Sheet";
-import { UserButton } from "@clerk/clerk-react";
+import { UserButton} from "@clerk/clerk-react";
 import { Menu, Search } from "lucide-react";
 import { SideBar } from "../SideBar";
 import { ChangeTheme } from "../../componentsApp/ChangeTheme";
+
 
 
 
@@ -15,7 +16,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="flex items-center px-2 gap-x-4 md:px-6 justify-between w-full bg-background border-b h-20  dark:bg-gray-900">
+    <nav className="flex items-center px-2 gap-x-4 md:px-6 justify-between w-full bg-gray-100 border-b h-20  dark:bg-gray-900">
       <div className="sm:block">
         <Sheet open={isOpen} onOpenChange={handleSheetChange}>
           <SheetTrigger className="flex items-center">
@@ -39,9 +40,11 @@ export function Navbar() {
       </div>
 
       <div className="flex gap-x-4 items-center">
-        <p>tooglle</p>
+        
         <ChangeTheme/>
         <UserButton /> 
+       
+
       </div>
     </nav>
   );
