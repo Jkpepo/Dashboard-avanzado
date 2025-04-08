@@ -50,20 +50,20 @@ const PokemonRanking = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-900 text-white min-h-screen">
-      <h2 className="text-3xl font-bold text-center text-yellow-400 mb-6">Ranking de Pokémon</h2>
+    <div className="p-6 bg-background text-white min-h-screen">
+      <h2 className="text-3xl font-bold text-center text-black mb-6 dark:text-white">Ranking de Pokémon</h2>
       <div className="flex flex-col items-center space-y-4">
         {/* Renderizamos la lista de Pokémon visibles hasta el contador visibleCount */}
         {pokemonList.slice(0, visibleCount).map((pokemon, index) => (
           <motion.div 
             key={pokemon.id} 
-            className="flex items-center bg-gray-800 p-4 rounded-lg w-full max-w-md shadow-md"
+            className="flex items-center bg-gray-200 text-black p-4 rounded-lg w-full max-w-md shadow-md dark:bg-gray-700 dark:text-white"
             initial={{ opacity: 0, x: -20 }} // Animación inicial (opacidad 0, desplazado hacia la izquierda)
             animate={{ opacity: 1, x: 0 }} // Animación final (opacidad 1, desplazado a su posición original)
             transition={{ duration: 0.5 }} // Duración de la animación
           >
             {/* Ranking de Pokémon */}
-            <span className="text-2xl font-bold text-yellow-300 mr-4">#{index + 1}</span>
+            <span className="text-2xl font-bold text-yellow-500 mr-4">#{index + 1}</span>
             {/* Imagen del Pokémon */}
             <img src={pokemon.image} alt={pokemon.name} className="w-16 h-16 mr-4" />
             <div>

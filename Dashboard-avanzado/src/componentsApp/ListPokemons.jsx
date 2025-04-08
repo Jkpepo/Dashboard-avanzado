@@ -9,7 +9,7 @@ export function ListPokemons() {
     useContext(PokemonContext);
    
   return (
-    <div className="  bg-gray-200 rounded-lg w-auto shadow-sm bg-background rounded-lg p-8 dark:bg-gray-700  ">
+    <div className="  bg-gray-200 rounded-lg w-auto shadow-sm bg-background rounded-lg p-8 dark:bg-gray-700 ">
       <div className="flex gap-4 items-center text-xl font-bold ">
 
       <CustomIcon icon={List}  /> Lista Pokemón
