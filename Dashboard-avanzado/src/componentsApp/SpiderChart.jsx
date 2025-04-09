@@ -8,6 +8,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { motion } from "framer-motion";
+import { CustomIcon } from "../componentsApp/CustomIcons";
+import { ChartNoAxesCombined} from "lucide-react";
 
 const SpiderChart = () => {
   const [pokemon, setPokemon] = useState("pikachu");
@@ -103,7 +105,7 @@ const SpiderChart = () => {
 
   return (
     <div className="shadow-sm bg-gray-200  rounded-lg p-5 dark:bg-gray-700">
-      <h2 className="text-2xl font-semibold mb-4 text-center">Estadísticas de Pokémon</h2>
+      <div className=" flex  gap-4  items-center text-xl font-semibold mb-8 ">  <CustomIcon icon={ChartNoAxesCombined}  />Estadísticas de Pokémon</div>
       
       <div className="mb-4 flex justify-center">
         <input

@@ -88,7 +88,7 @@ const PokemonComparator = () => {
   }, [pokemon1, pokemon2]);
 
   return (
-    <div className="p-6 shadow-lg bg-gray-900 text-white rounded-lg max-w-4xl mx-auto text-center">
+    <div className="  p-6 shadow-lg bg-gray-200 text-black rounded-lg max-w-4xl mx-auto text-center dark:bg-gray-700 dark:text-white">
       <h2 className="text-2xl font-semibold mb-4">Comparador de Pokémon</h2>
       
       {/* Inputs para ingresar los nombres de los Pokémon */}
@@ -96,25 +96,20 @@ const PokemonComparator = () => {
         <input
           type="text"
           placeholder="Pokémon 1"
-          className="border rounded-md px-4 py-2 bg-gray-800 text-white placeholder-gray-400"
+          className="border rounded-md px-4 py-2 bg-gray-400 text-white placeholder-gray-400"
           value={pokemon1}
           onChange={(e) => setPokemon1(e.target.value)}
         />
         <input
           type="text"
           placeholder="Pokémon 2"
-          className="border rounded-md px-4 py-2 bg-gray-800 text-white placeholder-gray-400"
+          className="border rounded-md px-4 py-2 bg-gray-400 text-white placeholder-gray-400"
           value={pokemon2}
           onChange={(e) => setPokemon2(e.target.value)}
         />
       </div>
       
-      {/* Botón para comparar los Pokémon */}
-      <div className="flex justify-center mb-4">
-        <Button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" onClick={comparePokemon}>
-          Comparar
-        </Button>
-      </div>
+    
       
       {/* Mostrar imágenes y nombres de los Pokémon */}
       <div className="grid grid-cols-2 gap-4">
@@ -126,6 +121,12 @@ const PokemonComparator = () => {
           <h3 className="text-lg font-bold">{pokemon2.toUpperCase()}</h3>
           {image2 && <img src={image2} alt={pokemon2} className="mx-auto my-2 w-64 h-64" />}
         </div>
+      </div>
+        {/* Botón para comparar los Pokémon */}
+        <div className="flex justify-center  mb-4">
+        <Button className=" cursor-pointer bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md" onClick={comparePokemon}>
+          Comparar
+        </Button>
       </div>
       
       {/* Mostrar el ganador y reproducir su sonido si hay uno */}
