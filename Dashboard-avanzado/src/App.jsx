@@ -9,11 +9,13 @@ import { PokemonProvider } from "./context/UseContext";
 import PokemonRanking from "./componentsApp/PokeRanking";
 import PokemonBattle from './componentsApp/PokemonBattle';
 import { ListPokemons } from "./componentsApp/ListPokemons";
-import PokemoCardList from './components/ui/PokemonCardList';
+import PokemoCardList from './componentsApp/PokemonCardList';
 import { PokemonDetails } from "./componentsApp/PokemonDetails";
 import BarChartComponent from './componentsApp/BarChartComponent';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProtectedRoutes } from "./auth/ProtectedRoutes";
+import { Settings } from "./pages/Settings";
+import {Security} from "./pages/Security";
 
 function App() {
   return (
@@ -21,19 +23,22 @@ function App() {
     <PokemonProvider>
       <Router>
         <Routes>
-        <Route element={<ProtectedRoutes />}>
+        {/* <Route element={<ProtectedRoutes />}> */}
           <Route path="/" element={ <Layout><Index /></Layout>} />
-          <Route path="/companies" element={<Layout><ListPokemons /></Layout>} />
-          <Route path="/calendar" element={<Layout><PokemonRanking /></Layout>} />
+          {/* <Route path="/companies" element={<Layout><ListPokemons /></Layout>} /> */}
+          <Route path="/ranking" element={<Layout><PokemonRanking /></Layout>} />
           <Route path="/calendar/:id" element={<Layout><PokemonDetails /></Layout>} />
           <Route path="/poke-rank" element={<Layout><PokemonRanking /></Layout>} />
           <Route path="/faqs" element={<Layout><Faqs /></Layout>} />
           <Route path="/spider-chart" element={<Layout><SpiderChart /></Layout>} />
           <Route path="/bar-chart" element={<Layout><BarChartComponent /></Layout>} />
-          <Route path="/poke-battle" element={<Layout><PokemonBattle /></Layout>} />
+          <Route path="/comparing" element={<Layout><PokemonBattle /></Layout>} />
           <Route path="/Card-list" element={<Layout><PokemoCardList /></Layout>} />
-        </Route>
+          <Route path="/settings" element={<Layout><Settings/></Layout>} />
+          <Route path="/security" element={<Layout><Security /></Layout>} />
+          <Route path="/album" element={<Layout><PokemoCardList /></Layout>} />
           <Route path="/login" element={<Login />} />
+        {/* </Route> */}
         </Routes>
       </Router>
     </PokemonProvider>

@@ -8,16 +8,18 @@ export function SideBarItem({ item, closeSheet }) {
     closeSheet(); 
   };
 
+  /// items de la side bar para cuando ponga el cursor encima se ponga de color gris 
   return (
     <div className="dark:bg-gray-900">
       <Link
         to={href}
         onClick={handleClick} 
         className={cn(
-          "flex gap-x-2 mr-2 light:text-slate-700 dark:bg-gray text-sm items-center hover:bg-slate-300/20 p-2 rounded-lg cursor-pointer"
+          "flex gap-x-2 mr-2 light:text-slate-700 dark:bg-gray text-sm items-center hover:bg-slate-500/20 p-2 rounded-lg cursor-pointer"
         )}
       >
-        <Icon className="h-5 w-5" />
+        {/* /// manejo el tamaño de los iconos de la side bar */}
+        <Icon className="h-6 w-6" />
         {label}
       </Link>
     </div>

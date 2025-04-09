@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
+import {ChartColumnBig} from"lucide-react"
+import { CustomIcon } from "./CustomIcons";
 
 const PokemonTypeStats = () => {
   // Estado para almacenar el tipo de Pokémon seleccionado
@@ -80,9 +82,9 @@ const PokemonTypeStats = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-xl font-semibold mb-4 text-center text-black dark:text-white">
-        Estadísticas Promedio por Tipo
-      </h2>
+      <div className=" flex  gap-4    mb-8 items-center text-xl font-semibold mb-4 text-center text-black dark:text-white">
+      <CustomIcon icon={ChartColumnBig}  /> Estadísticas Promedio por Tipo
+      </div>
       <p className="text-center text-lg font-bold text-black mb-4 dark:text-white " >Tipo: {type.toUpperCase()}</p>
 
       {/* Selector de tipo de Pokémon */}

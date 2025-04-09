@@ -38,7 +38,7 @@ export function SideBar() {
       </div>
 
       <Separator />
-      <footer className=" flex justify-center items-end h-[100dvh]  pb-4 ">2025, All rights reserved</footer>
+      
     </div>
   );
 }

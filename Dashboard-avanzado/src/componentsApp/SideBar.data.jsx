@@ -5,7 +5,9 @@ import {
     ShieldCheck,
     CircleHelpIcon,
     Calendar,
-    Settings} from 'lucide-react'
+    Settings,
+    ListChecks,
+    Repeat,ChartColumn,BookImage} from 'lucide-react'
 
 export const dataSideBar=[
     {
@@ -14,15 +16,21 @@ export const dataSideBar=[
     href:"/"
 },
 {
-    icon: Building2,
-    label:"Companies",
-    href:"/companies"
+    icon: Repeat,
+    label:"Comparador",
+    href:"/comparing"
 },
 {
-    icon:Calendar,
-    label:"Calendar",
-    href:"/calendar"
+    icon:ChartColumn,
+    label:"Ranking",
+    href:"/ranking"
 },
+{
+    icon:BookImage,
+    label:"Album",
+    href:"/album"
+},
+
 
 
 ]
