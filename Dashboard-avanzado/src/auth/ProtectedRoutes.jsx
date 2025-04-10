@@ -1,5 +1,5 @@
 import { useUser} from "@clerk/clerk-react";
-
+import { Spiner } from "../componentsApp/Spiner";
 import { Outlet } from "react-router-dom";
 // Outlet es un marcador de posicion que practicamente dice  aqui es donde voy a renderizar las rutas hijas
 // ProtectedRoutes es el componente principal (como el "papá")
@@ -10,7 +10,7 @@ import { Outlet } from "react-router-dom";
 export function ProtectedRoutes() {
   const { user, isLoaded } = useUser();
   // Mientras carga el estado del usuario
-  if (!isLoaded) return <div className="text-center mt-10 text-lg">Cargando...</div>;
+  if (!isLoaded) return<div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;;
   if (!user) {
     // esto lo hago para que me redirija a login porque no hay usuario logueado
 

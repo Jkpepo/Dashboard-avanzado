@@ -32,9 +32,9 @@ export function PokemonDetails() {
   }
 
   return (
-    <div className="  p-14 rounded-3xl bg-slate-400/80  p-5 m-4 shadow-xl mt-6 font-semibold dark:bg-gray">
+    <div className="   p-14 rounded-3xl bg-slate-400/80  p-5 m-4 shadow-xl mt-6 font-semibold dark:bg-gray">
       <div className="flex gap-4 mb-4">
-        <h1 className=" w-15 h-15 bg-cyan-400 border-5 rounded-full"></h1>
+        <h1 className=" w-15 h-15 bg-cyan-400 border-5 rounded-full dark:border-5 border-white "></h1>
         <h1 className=" w-5 h-5  bg-red-500 border-2 border-black rounded-full"></h1>
         <h1 className=" w-5 h-5  bg-yellow-200 border-2 border-black rounded-full"></h1>
         <h1 className=" w-5 h-5  bg-green-500 border-2 border-black rounded-full"></h1>
@@ -60,8 +60,8 @@ export function PokemonDetails() {
           alt={pokemonDetails.name}
           className="mx-auto w-80 h-80 "
         />
-        <div className="border mt-2 bg-gray-300">
-          <h2 className="text-center text-2xl font-bold"> Caracteristicas:</h2>
+        <div className=" text-black border mt-2 bg-gray-300">
+          <h2 className=" text-center text-2xl font-bold"> Caracteristicas:</h2>
           <h4 className="text-xl p-2">
             Peso: {(pokemonDetails.weight / 10).toFixed(1)} kg
           </h4>
@@ -83,7 +83,7 @@ export function PokemonDetails() {
           </div>
         </div>
       </div>
-      <div className=" items-center w-full rounded-xl bg-slate-400 text-md font-bold">
+      <div className=" text-black items-center w-full rounded-xl bg-slate-400 text-md font-bold">
         {pokemonDetails?.stats?.map((sta, id) => {
           return (
             <div className=" m-4" key={id}>

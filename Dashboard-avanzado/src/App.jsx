@@ -25,9 +25,8 @@ function App() {
         <Routes>
         <Route element={<ProtectedRoutes />}>/// protejo las rutas para que dependan del inicio de sesion
           <Route path="/" element={ <Layout><Index /></Layout>} />
-          {/* <Route path="/companies" element={<Layout><ListPokemons /></Layout>} /> */}
           <Route path="/ranking" element={<Layout><PokemonRanking /></Layout>} />
-          <Route path="/calendar/:id" element={<Layout><PokemonDetails /></Layout>} />
+          <Route path="/list/:id" element={<Layout><PokemonDetails /></Layout>} />
           <Route path="/poke-rank" element={<Layout><PokemonRanking /></Layout>} />
           <Route path="/faqs" element={<Layout><Faqs /></Layout>} />
           <Route path="/spider-chart" element={<Layout><SpiderChart /></Layout>} />

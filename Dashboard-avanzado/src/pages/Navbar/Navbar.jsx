@@ -35,7 +35,8 @@ export function Navbar() {
       </div>
 
       <div className="relative w-[300px]">
-        <Input placeholder="Buscar..." className="rounded-lg" />
+        {/* <Input placeholder="Buscar..." className="rounded-lg" /> */}
+        <h1 className="text-center">PokeDash</h1>
         <Search className="absolute top-2 right-2" />
       </div>
 

@@ -7,6 +7,7 @@ import { List,ArrowBigRightDash,ArrowBigLeftDash} from "lucide-react";
 export function ListPokemons() {
   const { pokemons, page, nextPagePokemon,prevPagePokemon} =
     useContext(PokemonContext);
+    
    
   return (
     <div className="  bg-gray-200 rounded-lg w-auto shadow-sm bg-background rounded-lg p-8 dark:bg-gray-700 ">
@@ -30,7 +31,7 @@ export function ListPokemons() {
               />
             </div>
             <div className="flex gap-4  ">
-              <Link to={`calendar/${pokemon.url.split("/")[6]}`}>
+              <Link to={`list/${pokemon.url.split("/")[6]}`}>
               
               <button className=" font-semibold shadow-lg bg-purple-600/30  m-2 w-40 h-10 rounded-xl hover:text-purple-500 cursor-pointer hover:border hover:scale-105 dark:bg-gray-700 text-white">Ver más</button>
               
