@@ -8,9 +8,14 @@ export  function Security() {
 
   if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;
 
+  // lastsignin es de clerk y es la fecha de ulrimo inicio de sesion del usuario
+  //new Date(user.lastSignInAt) → convierte esa cadena en un objeto Date de JavaScript
+  // toLocaleString() → convierte esa fecha a un formato legible para humanos según tu idioma y zona horaria.
+// si el ussuario existe formatea y muestra de lo contrario No disponible
   const lastSignIn = user.lastSignInAt ? new Date(user.lastSignInAt).toLocaleString() : "No disponible";
-  const devices = user.sessions?.length || 0;
-  console.log(user)
+
+  const devices = user.sessions?.length || 1;
+
 
   return (
     <div className="  p-6 space-y-6">

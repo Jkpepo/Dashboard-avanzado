@@ -1,38 +1,23 @@
-import { useUser, RedirectToSignIn,  } from '@clerk/clerk-react';
-
-import { Layout } from '../pages/Layout';
-
-
+import { SignIn, useUser } from "@clerk/clerk-react";
 
 function Login() {
-  
-  const { user, isLoaded } = useUser();
-  console.log(user)
-  console.log(useUser)
+  const { isSignedIn, isLoaded } = useUser();
 
-  if(!isLoaded){// isLoaded maneja el estado de carga
-    return <div> Cargando ...</div>
-  }
-  if(!user){
-    return <RedirectToSignIn/>
-  }
+  if (!isLoaded) return <div className="text-center mt-10 text-lg">Cargando...</div>;
 
+  if (isSignedIn) {
+    // Si ya está logueado, redirige al home 
+    window.location.href = "/";
+    return null;
+  }
+  // / modifique este componente ya que como lo tenia con el redirect si bien es una propiedad de clark
+  // pero el problema es que me lo maneja desde una ruta de el y yo queria que todo corriera desde mi ruta local
+  // entonces Sigin me permite esto
   return (
-    <div>
-        <Layout></Layout>
-    {/* <h1>Bienvenid@, {user.firstName}!</h1> */}
-    {/* <SignedOut>
-    <p>You are signed out.</p>
-        <SignInButton/>
-    </SignedOut> */}
-    
-    {/* <SignedIn >
-        <UserButton/>
-    </SignedIn> */}
-
-   
-  </div>
-  )
+    <div className="flex justify-center items-center h-screen">
+      <SignIn path="/login" routing="path" />
+    </div>
+  );
 }
 
-export default Login
+export default Login;

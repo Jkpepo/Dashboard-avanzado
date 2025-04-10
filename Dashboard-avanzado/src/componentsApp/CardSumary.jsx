@@ -1,4 +1,4 @@
-// componente para las tarjetas
+// componente para las tarjetas que tengo en pages/index.jsx
 
 import { CustomIcon } from "./CustomIcons";
 
