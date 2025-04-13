@@ -8,7 +8,6 @@ import SpiderChart from "./componentsApp/SpiderChart";
 import { PokemonProvider } from "./context/UseContext";
 import PokemonRanking from "./componentsApp/PokeRanking";
 import PokemonBattle from './componentsApp/PokemonBattle';
-import { ListPokemons } from "./componentsApp/ListPokemons";
 import PokemoCardList from './componentsApp/PokemonCardList';
 import { PokemonDetails } from "./componentsApp/PokemonDetails";
 import BarChartComponent from './componentsApp/BarChartComponent';
@@ -30,7 +29,7 @@ function App() {
           <Route path="/list/:id" element={<Layout><PokemonDetails /></Layout>} />
           <Route path="/poke-rank" element={<Layout><PokemonRanking /></Layout>} />
           <Route path="/faqs" element={<Layout><Faqs /></Layout>} />
-          <Route path="/analitys" element={<Layout><Info /></Layout>} />
+          <Route path="/info" element={<Layout><Info /></Layout>} />
           <Route path="/spider-chart" element={<Layout><SpiderChart /></Layout>} />
           <Route path="/bar-chart" element={<Layout><BarChartComponent /></Layout>} />
           <Route path="/comparing" element={<Layout><PokemonBattle /></Layout>} />

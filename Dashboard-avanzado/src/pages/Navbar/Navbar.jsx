@@ -20,7 +20,7 @@ export function Navbar() {
         <Sheet open={isOpen} onOpenChange={handleSheetChange}>
           <SheetTrigger className="flex items-center">
             
-            <Menu className="lg:hidden h-8 w-8" />
+            <Menu className=" xl:hidden h-8 w-8" />
           
           </SheetTrigger>
 
@@ -33,10 +33,10 @@ export function Navbar() {
         </Sheet>
       </div>
 
-      <div className="relative w-[300px]">
-        {/* <Input placeholder="Buscar..." className="rounded-lg" /> */}
-        <h1 className="text-center">PokeDash</h1>
-        <Search className="absolute top-2 right-2" />
+      <div className="">
+       
+        <h1 className="text-center font-bold">PokeDash</h1>
+        
       </div>
 
       <div className="flex gap-x-4 items-center">

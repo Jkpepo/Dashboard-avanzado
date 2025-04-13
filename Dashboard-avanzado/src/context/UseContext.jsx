@@ -26,7 +26,7 @@ export function PokemonProvider({children}){
         .then((data)=>{
         setPokemons(data.results)
         
-        console.log("pokemones",data) 
+    
        
         })
     },[page])

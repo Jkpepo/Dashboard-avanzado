@@ -10,7 +10,7 @@ export function Layout({ children }) {
         </div>
       </div>
 
-      <div className="w-full xl:ml-80">
+      <div className="w-full xl:ml-70">
         <Navbar />
         <div className=" bg-gray-100  p-6   dark:bg-gray-900 ">
           {children}

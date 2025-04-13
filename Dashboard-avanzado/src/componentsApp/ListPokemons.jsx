@@ -42,13 +42,13 @@ export function ListPokemons() {
         </div>
       ))}
 
-      <div className=" items-center  bg-background  p-4  rounded flex justify-center gap-4 dark:bg-gray-700">
+      <div className=" items-center  bg-background  p-4  rounded flex justify-center gap-2 dark:bg-gray-700">
 
 
     <button
         onClick={prevPagePokemon}
         disabled ={page === 0}
-        className={`gap-4 flex items-center text-center ${page === 0 ? "text-gray-400 cursor-not-allowed" : ""}`}
+        className={`gap-2 flex items-center text-center ${page === 0 ? "text-gray-400 cursor-not-allowed" : ""}`}
         
         ><CustomIcon icon={ArrowBigLeftDash}/>Anterior
     </button>
@@ -56,7 +56,7 @@ export function ListPokemons() {
       <button
         onClick={nextPagePokemon}
         disabled={pokemons.length==0 }
-        className={` gap-4 flex items-center text-center ${pokemons.length===0 ? "text-gray-400 cursor-not-allowed" : ""}`}
+        className={` gap-2 flex items-center text-center ${pokemons.length===0 ? "text-gray-400 cursor-not-allowed" : ""}`}
       >Siguiente <CustomIcon icon={ArrowBigRightDash}/>
     </button>
       </div>

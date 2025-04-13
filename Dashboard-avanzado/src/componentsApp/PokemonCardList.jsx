@@ -75,7 +75,7 @@ const PokemonCardList = () => {
           <button
             key={type}
             onClick={() => setSelectedType(type === selectedType ? null : type)}
-            className={`px-4 py-1 rounded-full text-white font-semibold shadow-md transition ${
+            className={`cursor-pointer hover:scale-120 px-4 py-1 rounded-full text-white font-semibold shadow-md transition ${
               selectedType === type ? "ring-2 ring-white scale-105" : ""
             }`}
             style={{ backgroundColor: color }}
@@ -85,7 +85,7 @@ const PokemonCardList = () => {
         ))}
         <button
           onClick={() => setSelectedType(null)}
-          className={`px-4 py-1 rounded-full font-semibold shadow-md transition ${
+          className={`px-4 py-1 rounded-full font-semibold shadow-md transition hover:scale-120 cursor-pointer ${
             selectedType === null
               ? "ring-2 ring-white scale-105 bg-black text-white"
               : "bg-gray-300 text-black"

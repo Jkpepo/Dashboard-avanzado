@@ -5,7 +5,7 @@
 
 export function CustomIcon({ icon: Icon }) {
   return (
-    <div className="p-2 bg-slate-400/20 rounded-lg w-10">
+    <div className="p-2 bg-slate-400/20 rounded-lg w-10 flex items-center justify-center">
       <Icon />
     </div>
   );

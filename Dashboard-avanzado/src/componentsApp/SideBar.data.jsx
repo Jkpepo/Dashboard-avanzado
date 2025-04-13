@@ -43,8 +43,8 @@ export const dataToolSideBar=[
 {
 
     icon:CircleHelpIcon,
-    label:"Analitys",
-    href:"/analitys"
+    label:"Info",
+    href:"/info"
 
 },
 

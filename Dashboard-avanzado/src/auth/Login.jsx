@@ -13,6 +13,9 @@ function Login() {
   // / modifique este componente ya que como lo tenia con el redirect si bien es una propiedad de clark
   // pero el problema es que me lo maneja desde una ruta de el y yo queria que todo corriera desde mi ruta local
   // entonces Sigin me permite esto
+
+  // Se usa <SignIn /> con `path="/login"` para mantener la autenticación en rutas locales
+// evitando el uso de rutas externas por defecto de Clerk.
   return (
     <div className="flex justify-center items-center h-screen">
       <SignIn path="/login" routing="path" />

@@ -13,7 +13,7 @@ export function CardSumary(props) {
           {title}
         </div>
         <div className="flex gap-4 md:m-auto ">
-          <p className=" "> {total}</p>
+          <p className="text-lg font-bold "> {total}</p>
         </div>
       </div>
     </div>
