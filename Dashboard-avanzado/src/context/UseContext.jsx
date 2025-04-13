@@ -55,7 +55,9 @@ export function PokemonProvider({children}){
 
 // cambio de paginas
     const nextPagePokemon=()=>{
-        setPage(page+1)
+      
+            setPage(page+1)
+        
     }
     
     const prevPagePokemon=()=>{

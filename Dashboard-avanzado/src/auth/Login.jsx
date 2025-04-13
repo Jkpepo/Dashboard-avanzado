@@ -3,7 +3,7 @@ import { Spiner } from "../componentsApp/Spiner";
 function Login() {
   const { isSignedIn, isLoaded } = useUser();
 
-  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;;
+  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '><Spiner/></div>;
 
   if (isSignedIn) {
     // Si ya está logueado, redirige al home 

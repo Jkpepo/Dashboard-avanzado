@@ -10,7 +10,7 @@ import { Outlet } from "react-router-dom";
 export function ProtectedRoutes() {
   const { user, isLoaded } = useUser();
   // Mientras carga el estado del usuario
-  if (!isLoaded) return<div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;;
+  if (!isLoaded) return<div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '> <Spiner/></div>;;
   if (!user) {
     // esto lo hago para que me redirija a login porque no hay usuario logueado
 

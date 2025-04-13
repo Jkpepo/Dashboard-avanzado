@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProtectedRoutes } from "./auth/ProtectedRoutes";
 import { Settings } from "./pages/Settings";
 import {Security} from "./pages/Security";
+import Info from "./componentsApp/Info";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/list/:id" element={<Layout><PokemonDetails /></Layout>} />
           <Route path="/poke-rank" element={<Layout><PokemonRanking /></Layout>} />
           <Route path="/faqs" element={<Layout><Faqs /></Layout>} />
+          <Route path="/analitys" element={<Layout><Info /></Layout>} />
           <Route path="/spider-chart" element={<Layout><SpiderChart /></Layout>} />
           <Route path="/bar-chart" element={<Layout><BarChartComponent /></Layout>} />
           <Route path="/comparing" element={<Layout><PokemonBattle /></Layout>} />

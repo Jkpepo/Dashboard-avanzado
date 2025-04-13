@@ -60,7 +60,7 @@ const PokemonCardList = () => {
   if (loading)
     return (
       <div className=" flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  ">
-        Cargando... <Spiner />
+         <Spiner />
       </div>
     );
   return (

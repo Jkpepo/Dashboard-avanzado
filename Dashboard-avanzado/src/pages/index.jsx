@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CardSumary } from "../componentsApp/CardSumary";
 import { PokemonContext } from "../context/UseContext";
-import { UsersRound, User, ChartColumn, CalendarFold } from "lucide-react";
+import {  Blocks, CalendarFold,PawPrint ,Flame} from "lucide-react";
 import SpiderChart from "../componentsApp/SpiderChart";
 import { ListPokemons } from "../componentsApp/ListPokemons";
 import BarCahartComponent from "../componentsApp/BarChartComponent";
@@ -19,21 +19,21 @@ export function Index() {
       <div className="bg-gray-200 grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-x-20  dark:bg-gray-800 ">
         {
           <CardSumary
-            icon={UsersRound}
+            icon={PawPrint}
             title="Total Pokémones"
             total={totalPokemons ? totalPokemons : <Spiner />}
           />
         }
         {
           <CardSumary
-            icon={User}
+            icon={Flame}
             title="Tipos de Pokémones"
             total={totalTypes ? totalTypes : <Spiner />}
           />
         }
         {
           <CardSumary
-            icon={ChartColumn}
+            icon={Blocks}
             title="Generaciones"
             total={totalGenerations ? totalGenerations : <Spiner />}
           />

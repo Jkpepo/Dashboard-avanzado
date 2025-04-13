@@ -1,34 +1,39 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { PokemonContext } from "../context/UseContext";
+import { useParams, useNavigate } from "react-router-dom";
+import { Spiner } from "./Spiner";
 
 export function PokemonDetails() {
-    // me traigo el id con useParams ya que la api de pokemon tiene diferente edpoints y para poder acceder
-    // a los detalles del pokemon debo ir id por id 
+  // me traigo el id con useParams ya que la api de pokemon tiene diferente edpoints y para poder acceder
+  // a los detalles del pokemon debo ir id por id
   const { id } = useParams();
   const [pokemonDetails, setPokemonDetails] = useState(null);
-//   creo un estado para almacenar la respuesta de la peticion a la url
+  const [loading, setLoading] = useState(true);
+  //   creo un estado para almacenar la respuesta de la peticion a la url (datos)
 
   const url_base = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
-  
-  const { nextPagePokemon, prevPagePokemon, page } = useContext(PokemonContext);
+  const navigate = useNavigate();
+  // agregue el navigate y elimine el context ya que con el useparams recibo el id que es lo que necesito
+  // para cambiar de uno a otro Ventajas de usar URLs dinámicas con useParams y useNavigate:
+  // Simplificación: Ya no necesitas un estado global ni funciones de navegación.
+  // Solo necesitas cambiar la URL al siguiente o anterior Pokémon.
 
   useEffect(() => {
     fetch(url_base)
       .then((result) => result.json())
       .then((data) => {
         setPokemonDetails(data);
+        setLoading(false);
       });
   }, [id]);
 
-//  esto me da tiempo 
-// a que me carguen los datos ya que las peticiones son asincronas y muchas veces no cargan a tiempo 
-// y me renderizaria datos  vacios y eso no queremos que pase
-//   
-//
-  if (!pokemonDetails) {
-    return <div className="text-center py-4 dark:bg-gray-700 text-white">Cargando Pokémon...</div>;
+  //  esto me da tiempo
+  // a que me carguen los datos ya que las peticiones son asincronas y muchas veces no cargan a tiempo
+  // y me renderizaria datos  vacios y eso no queremos que pase y mejor que muestre cargando
+  //
+  //
+  if (loading) {
+    return <Spiner />; 
   }
 
   return (
@@ -45,11 +50,11 @@ export function PokemonDetails() {
             {pokemonDetails.id}
           </h1>
         </div>
-
+        {/* nombre del pokemon */}
         <h1 className="text-white  tracking-widest text-3xl font-bold capitalize text-center  p-4 ">
           {pokemonDetails.name}
         </h1>
-
+        {/* imagen del pokemon la animada o sino la normal tipo pixel */}
         <img
           src={
             pokemonDetails.sprites.versions["generation-v"]["black-white"]
@@ -103,23 +108,27 @@ export function PokemonDetails() {
           );
         })}
       </div>
-      <button
-        onClick={prevPagePokemon}
-        className={`gap-4 flex items-center text-center ${
-          page === 0 ? "text-gray-400 cursor-not-allowed" : ""
-        }`}
-      >
-        Anterior
-      </button>
-      <button
-        onClick={nextPagePokemon}
-        disabled={page === 130}
-        className={` gap-4 flex items-center text-center ${
-          page === 130 ? "text-gray-400 cursor-not-allowed" : ""
-        }`}
-      >
-        Siguiente
-      </button>
+      <div className="flex justify-around text-center items-center">
+        <button
+          onClick={() => navigate(`/list/${parseInt(id) - 1}`)} // Navegar al Pokémon anterior
+          disabled={parseInt(id) === 1} // Deshabilitar si estamos en el primer Pokémon
+          className={` bg-gray-700 w-20 gap-4 flex justify-center  items-center rounded-lg h-8 text-white transition duration-200 ease-in-out hover:bg-gray-500 hover:text-black hover:scale-105 ${
+            parseInt(id) === 1 ? "opacity-0 " : ""
+          }`}
+        >
+          Anterior
+        </button>
+
+        <button
+          onClick={() => navigate(`/list/${parseInt(id) + 1}`)} // Navegar al siguiente Pokémon
+          disabled={parseInt(id) === 1025} // Deshabilitar si estamos en el último Pokémon
+          className={` bg-gray-700 w-20 gap-4 flex justify-center  items-center rounded-lg h-8 text-white transition duration-200 ease-in-out hover:bg-gray-500 hover:text-black hover:scale-105 ${
+            parseInt(id) === 1025 ? "opacity-0 " : ""
+          }`}
+        >
+          Siguiente
+        </button>
+      </div>
     </div>
   );
 }

@@ -55,8 +55,8 @@ export function ListPokemons() {
         <h1>  (Pagina {page + 1})</h1>
       <button
         onClick={nextPagePokemon}
-        disabled={page === 130}
-        className={` gap-4 flex items-center text-center ${page ===130  ? "text-gray-400 cursor-not-allowed" : ""}`}
+        disabled={pokemons.length==0 }
+        className={` gap-4 flex items-center text-center ${pokemons.length===0 ? "text-gray-400 cursor-not-allowed" : ""}`}
       >Siguiente <CustomIcon icon={ArrowBigRightDash}/>
     </button>
       </div>

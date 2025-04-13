@@ -15,6 +15,7 @@ export function Layout({ children }) {
         <div className=" bg-gray-100  p-6   dark:bg-gray-900 ">
           {children}
           {/* // este children es mi todo mi layout y lo uso en todas mis rutas de App.jsx para tener la misma estrcutura */}
+        
         </div>
       </div>
     </div>

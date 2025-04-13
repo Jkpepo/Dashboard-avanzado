@@ -4,7 +4,7 @@ import { Spiner } from '../componentsApp/Spiner';
 export function Settings() {
   const { user, isLoaded } = useUser();
 
-  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;
+  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '><Spiner/></div>;
 
   return (
     <div className="p-6 dark:text-white">

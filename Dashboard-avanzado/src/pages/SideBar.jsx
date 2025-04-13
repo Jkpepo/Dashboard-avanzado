@@ -8,7 +8,7 @@ import {Separator} from "@/components/ui/Separator"
 
 export function SideBar() {
   return (
-    <div className=" bg-gray-100 flex flex-col justify-between h-full border dark:bg-gray-900  ">
+    <div className=" h-1000  bg-gray-100 flex flex-col justify-between  border dark:bg-gray-900  ">
       <div>
         <div className="p-2 md:p-6">
           <p>logo</p>
@@ -35,9 +35,14 @@ export function SideBar() {
             <SideBarItem key={item.label} item={item} />
           ))}
         </div>
-      </div>
 
       <Separator />
+      <div className="flex justify-center items-center m-10 p-8">
+
+      {/* <img  className="  w-70 h-40" src="../../public/pokemon-gafas-sin-fondo.png" alt=""/> */}
+      <h1 className="">  © Derechos reservados</h1>
+      </div>
+      </div>
       
     </div>
   );

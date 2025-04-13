@@ -12,7 +12,7 @@ export  function Security() {
     }
   }, [user]);
 
-  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '>Cargando... <Spiner/></div>;
+  if (!isLoaded) return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '> <Spiner/></div>;
 
   // lastsignin es de clerk y es la fecha de ulrimo inicio de sesion del usuario
   //new Date(user.lastSignInAt) → convierte esa cadena en un objeto Date de JavaScript

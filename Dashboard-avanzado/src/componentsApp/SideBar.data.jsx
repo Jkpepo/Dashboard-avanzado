@@ -1,14 +1,11 @@
 import {
-  
-    Building2,
     PanelsTopLeft,
     ShieldCheck,
     CircleHelpIcon,
-    Calendar,
     Settings,
-    ListChecks,
     Repeat,ChartColumn,BookImage} from 'lucide-react'
-
+// quise modularizar un poco el codigo le paso este arreglo de objetos con un icono su texto y su direccionamiento
+// en el sidebar solo lo recorro y ya me trae todo los datos
 export const dataSideBar=[
     {
     icon: PanelsTopLeft,
@@ -17,7 +14,7 @@ export const dataSideBar=[
 },
 {
     icon: Repeat,
-    label:"Comparador",
+    label:"Comparing",
     href:"/comparing"
 },
 {

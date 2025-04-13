@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"; // Importamos React y los hooks necesarios
 import { motion } from "framer-motion"; // Importamos framer-motion para animaciones
+import { Spiner } from "./Spiner";
 
 const PokemonRanking = () => {
   // Estado que almacenará la lista de Pokémon obtenidos
@@ -48,7 +49,9 @@ const PokemonRanking = () => {
   const loadMore = () => {
     setVisibleCount((prev) => prev + 20); // Incrementa el contador de Pokémon visibles en 20
   };
-
+  if (pokemonList.length === 0) {
+   return <div className=' flex items-center justify-center min-h-screen  m-4 p-4  gap-4 text-3xl  '> <Spiner/></div>;
+  }
   return (
     <div className="p-6 bg-background text-white min-h-screen">
       <h2 className="text-3xl font-bold text-center text-black mb-6 dark:text-white">Ranking de Pokémon</h2>
@@ -77,8 +80,8 @@ const PokemonRanking = () => {
       {/* Si aún hay más Pokémon, mostramos el botón para cargar más */}
       {visibleCount < pokemonList.length && (
         <button 
-          className="mt-6 px-4 py-2 bg-yellow-500 text-gray-900 font-bold rounded-lg hover:bg-yellow-600 transition-all"
-          onClick={loadMore}
+  className="mt-6 px-6 py-3 bg-gray-300 text-gray-900 font-bold rounded-xl shadow-md hover:bg-gray-600  hover:text-white hover:scale-105 transition-transform duration-300 ease-in-out dark:bg-gray-700 dark:text-white dark:hover:text-black" 
+   onClick={loadMore}
         >
           Cargar Más
         </button>
