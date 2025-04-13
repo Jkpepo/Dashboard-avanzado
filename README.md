@@ -106,6 +106,6 @@ Y abre en tu navegador:
 Desarrollado con cariño por [
 Juan camilo Garcia Monsalve --- https://github.com/Jkpepo/
 Camilo Gamboa --- https://github.com/camilogamboa2024
-Stiben --- https://github.com/Stiben24435-0
+John Stiven Garcia--- https://github.com/Stiben24435-0
  
 ]
