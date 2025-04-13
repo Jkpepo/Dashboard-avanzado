@@ -10,8 +10,13 @@ export function SideBar() {
   return (
     <div className=" h-screen w-70 bg-gray-100 flex flex-col justify-between  border dark:bg-gray-900  ">
       <div>
-        <div className="p-2 md:p-6">
-          <p>logo</p>
+        <div className="p-2 md:p-6  ">
+
+          <div className="flex justify-center items-center">
+
+          <img className="mb-4   w-16" src="/favicon.png"  alt="Logo"/>
+          </div>
+          <Separator />
           <p className="text-slate-500 mb-2">General</p>
           {dataSideBar.map((item) => (
             <SideBarItem key={item.label} item={item} />

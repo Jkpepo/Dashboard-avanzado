@@ -25,7 +25,7 @@ export function Navbar() {
           </SheetTrigger>
 
           <SheetContent side="left">
-            <SheetTitle className="flex justify-center mt-2">Titulito</SheetTitle>
+            <SheetTitle className="flex justify-center mt-2">Menú</SheetTitle>
             <div>
               <SideBar closeSheet={() => setIsOpen(false)} /> 
             </div>
@@ -33,9 +33,10 @@ export function Navbar() {
         </Sheet>
       </div>
 
-      <div className="">
+      <div className="flex items-center gap-2 ">
        
-        <h1 className="text-center font-bold">PokeDash</h1>
+        <h1 className="text-center font-bold text-2xl">Pokedash</h1>
+      
         
       </div>
 
