@@ -10,12 +10,12 @@ import {
   
   export default function Info() {
     return (
-      <div className="p-6 grid gap-10">
+      <div className="p-6 grid gap-10  ">
         {/* Sección 1: Resumen con iconos */}
-        <div className="grid gap-4 text-center">
+        <div className="grid gap-4 text-center ">
           <h2 className="text-2xl font-bold">¿Qué puedes hacer en Pokedash?</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
-            <div className="flex flex-col items-center gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center ">
+            <div className="flex flex-col items-center gap-2 ">
               <LayoutDashboard className="w-10 h-10 text-blue-500" />
               <p className="font-semibold">Explora Pokémon</p>
             </div>
@@ -45,27 +45,23 @@ import {
         {/* Sección 2: Galería de imagenes */}
         <div className="grid gap-4">
           <h2 className="text-2xl font-bold text-center">Galería de Pokedash</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png"
-              alt="Arceus"
-              className="rounded-xl shadow-xl object-cover"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+              alt="Charizard"
+              className="rounded-xl shadow-2xl object-cover"
             />
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/889.png"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
               alt="Mewtwo"
-              className="rounded-xl shadow-xl object-cover"
+              className="rounded-xl shadow-2xl object-cover"
             />
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/792.png"
-              alt="Ho-oh"
-              className="rounded-xl shadow-xl object-cover"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png"
+              alt="Arceus"
+              className="rounded-xl shadow-2xl object-cover"
             />
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png"
-              alt="Ho-oh"
-              className="rounded-xl shadow-xl object-cover"
-            />
+         
           </div>
         </div>
   

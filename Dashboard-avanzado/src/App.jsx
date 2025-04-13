@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProtectedRoutes } from "./auth/ProtectedRoutes";
 import { Settings } from "./pages/Settings";
 import {Security} from "./pages/Security";
-import Info from "./componentsApp/Info";
+import Info from "./pages/Info";
 
 function App() {
   return (
