@@ -35,12 +35,13 @@ node -v
 debera aparecer algo similar (la version pude variar)
 v22.14.0
 
-
+---
 ### 2️⃣ Clonar o descargar el proyecto
 en tu terminal de git (bash)
 git clone https://github.com/Jkpepo/Dashboard-avanzado.git
-cd Dashboard-avanzado
 
+cd Dashboard-avanzado
+---
 --Otra opción--
 
 📦 Descargando ZIP
@@ -51,13 +52,12 @@ Extrae el archivo
 
 Abre el archivo en tu editor de codigo
 cd Dashboard-avanzado
-
+---
 3️⃣ Instalar dependencias
 en tu terminal 
 
 npm install 
-
-
+---
 ⚠️ Errores comunes y cómo solucionarlos
 🛑 Error: "running scripts is disabled on this system"
 
@@ -70,6 +70,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 d
 Después de eso:
 npm install
+---
 
 ▶️ Ejecutar el proyecto
 En tu terminal
@@ -94,11 +95,12 @@ Y abre en tu navegador:
 
 📚 Página de "Info" y "Faqs" con  preguntas frecuentes,historia y datos del anime + características del dashboard
 
-
+---
 🧪 Estado actual
 ✅ Proyecto activo en desarrollo
 🚧 Próximamente: más info del anime y otras mejoras
 
+---
 
 ❤️ Autores
 Desarrollado con cariño por [
