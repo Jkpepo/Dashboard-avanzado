@@ -4,8 +4,8 @@ import {
   dataSupportSideBar,
 } from "../componentsApp/SideBar.data";
 import { SideBarItem } from "../componentsApp/SideBarItems"; 
-// import {Separator} from "@/components/ui/Separator"
-import {Separator} from "../../src/components/ui/Separator"
+import {Separator} from "@/components/ui/separator"
+// import {Separator} from "../../src/components/ui/Separator"
 
 export function SideBar() {
   return (
