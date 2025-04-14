@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/Sheet";
 import { UserButton} from "@clerk/clerk-react";
-import { Menu, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 import { SideBar } from "../SideBar";
 import { ChangeTheme } from "../../componentsApp/ChangeTheme";
 
