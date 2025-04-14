@@ -4,15 +4,15 @@ import { ClerkProvider, RedirectToSignIn, useUser } from '@clerk/clerk-react';//
 import './index.css'
 import App from './App.jsx'
 
-const llave_clerk= import.meta.env.VITE_CLERK_PUBLISHABLE_KEY; // clave que se conecta con el servicio de clerk
+const PUBLISHABLE_KEY= import.meta.env.VITE_CLERK_PUBLISHABLE_KEY; // clave que se conecta con el servicio de clerk
 
-if (!llave_clerk) {
+if (!PUBLISHABLE_KEY) {
   throw  new Error("Error en la llave ")
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={llave_clerk} afterSignOutUrl="/">
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
     <App />
     </ClerkProvider>
   </StrictMode>,

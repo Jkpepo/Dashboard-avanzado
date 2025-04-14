@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/Sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { UserButton} from "@clerk/clerk-react";
 import { Menu } from "lucide-react";
 import { SideBar } from "../SideBar";
