@@ -5,6 +5,7 @@ import {
 } from "../componentsApp/SideBar.data";
 import { SideBarItem } from "../componentsApp/SideBarItems"; 
 import {Separator} from "@/components/ui/Separator"
+import {Separator} from "../components/ui/Separator"
 
 export function SideBar() {
   return (
