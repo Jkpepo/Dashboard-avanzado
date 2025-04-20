@@ -77,20 +77,24 @@ const PokemonTypeStats = () => {
 
   return (
     <motion.div 
-      className=" p-6 shadow-md bg-gray-200 text-black rounded-lg max-w-3xl mx-auto  dark:bg-gray-700 dark:text-white"
+      className="w-full px-2 sm:px-6 shadow-md bg-gray-200 text-black rounded-lg dark:bg-gray-700 dark:text-white"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className=" flex  gap-4    mb-8 items-center text-xl font-semibold mb-4 text-center text-black dark:text-white">
-      <CustomIcon icon={ChartColumnBig}  /> Estadísticas Promedio por Tipo
+      <div className="flex flex-col sm:flex-row gap-4 mb-8 items-center text-xl font-semibold text-center text-black dark:text-white">
+        <CustomIcon icon={ChartColumnBig} />
+        Estadísticas Promedio por Tipo
       </div>
-      <p className="text-center text-lg font-bold text-black mb-4 dark:text-white " >Tipo: {type.toUpperCase()}</p>
-
+  
+      <p className="text-center text-lg font-bold text-black mb-4 dark:text-white">
+        Tipo: {type.toUpperCase()}
+      </p>
+  
       {/* Selector de tipo de Pokémon */}
       <div className="mb-4 flex justify-center">
         <motion.select
-          className="border rounded-md px-4 py-2 bg-gray-400 text-white hover:bg-gray-700 transition-all duration-300"
+          className="w-full max-w-xs border rounded-md px-4 py-2 bg-gray-400 text-white hover:bg-gray-700 transition-all duration-300"
           onChange={(e) => setType(e.target.value)}
           value={type}
           whileHover={{ scale: 1.05 }}
@@ -100,10 +104,10 @@ const PokemonTypeStats = () => {
           ))}
         </motion.select>
       </div>
-
+  
       {/* Gráfico de barras con estadísticas promedio */}
       <motion.div 
-        className="w-full "
+        className="w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -111,20 +115,21 @@ const PokemonTypeStats = () => {
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={stats} margin={{ top: 10, right: 30, left: 0, bottom: 10 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="black" />
-            <XAxis dataKey="name" stroke="gray" tick={{ fill: 'gray' }} />
-            <YAxis stroke="white" tick={{ fill: 'gray' }} />
+            <XAxis dataKey="name" stroke="gray" tick={{ fill: 'gray', fontSize: 10 }} />
+            <YAxis stroke="white" tick={{ fill: 'gray', fontSize: 10 }} />
             <Tooltip wrapperStyle={{ backgroundColor: "#333", color: "gray" }} />
             <Bar dataKey="value" fill={color} radius={[10, 10, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </motion.div>
-
+  
       {/* Mostrar la cantidad de Pokémon del tipo seleccionado */}
       <div className="mt-4 text-center text-lg text-black dark:text-white">
         <p>Cantidad de Pokémon que pueden usar este tipo: <span className="font-bold">{pokemonCount}</span></p>
       </div>
     </motion.div>
   );
+  
 };
 
 export default PokemonTypeStats;

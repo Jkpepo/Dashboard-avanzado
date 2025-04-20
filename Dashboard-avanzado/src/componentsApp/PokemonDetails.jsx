@@ -37,98 +37,86 @@ export function PokemonDetails() {
   }
 
   return (
-    <div className="   p-14 rounded-3xl bg-slate-400/80  p-5 m-4 shadow-xl mt-6 font-semibold dark:bg-gray">
-      <div className="flex gap-4 mb-4">
-        <h1 className=" w-15 h-15 bg-cyan-400 border-5 rounded-full dark:border-5 border-white "></h1>
-        <h1 className=" w-5 h-5  bg-red-500 border-2 border-black rounded-full"></h1>
-        <h1 className=" w-5 h-5  bg-yellow-200 border-2 border-black rounded-full"></h1>
-        <h1 className=" w-5 h-5  bg-green-500 border-2 border-black rounded-full"></h1>
-      </div>
-      <div className=" bg-gray-700 border-[20px] rounded-3xl">
-        <div className="flex  p-2  h-10 ">
-          <h1 className="  flex  justify-center items-center mt-2 w-15 h-15 text-white text-xl font-bold border bg-gray-500 rounded-full">
-            {pokemonDetails.id}
-          </h1>
-        </div>
-        {/* nombre del pokemon */}
-        <h1 className="text-white  tracking-widest text-3xl font-bold capitalize text-center  p-4 ">
-          {pokemonDetails.name}
-        </h1>
-        {/* imagen del pokemon la animada o sino la normal tipo pixel */}
-        <img
-          src={
-            pokemonDetails.sprites.versions["generation-v"]["black-white"]
-              .animated.front_default ??
-            pokemonDetails.sprites.versions["generation-v"]["black-white"]
-              .front_default
-          }
-          alt={pokemonDetails.name}
-          className="mx-auto w-80 h-80 "
-        />
-        <div className=" text-black border mt-2 bg-gray-300">
-          <h2 className=" text-center text-2xl font-bold"> Caracteristicas:</h2>
-          <h4 className="text-xl p-2">
-            Peso: {(pokemonDetails.weight / 10).toFixed(1)} kg
-          </h4>
-          <h4 className="text-xl p-2 ">
-            Altura: {pokemonDetails.height / 10} m
-          </h4>
-          <h1 className="text-center text-2xl font-bold m-4 ">Tipo:</h1>
-          <div className="flex justify-around m-2">
-            {pokemonDetails?.types?.map((type, id) => {
-              return (
-                <div className="" key={id}>
-                  <h1 className="capitalize text-xl font-bold">
-                    {" "}
-                    {type.type.name}
-                  </h1>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-      <div className=" text-black items-center w-full rounded-xl bg-slate-400 text-md font-bold">
-        {pokemonDetails?.stats?.map((sta, id) => {
-          return (
-            <div className=" m-4" key={id}>
-              <div className=" flex items-center  gap-2 ">
-                <h1 className="flex-grow capitalize font-medium ">
-                  {" "}
-                  {sta?.stat?.name}
-                </h1>
-                <progress
-                  className="w-50"
-                  value={sta.base_stat}
-                  max={150}
-                ></progress>
-                <p className="font-bold text-center w-16"> {sta.base_stat}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="flex justify-around text-center items-center">
-        <button
-          onClick={() => navigate(`/list/${parseInt(id) - 1}`)} // Navegar al Pokémon anterior
-          disabled={parseInt(id) === 1} // Deshabilitar si estamos en el primer Pokémon
-          className={` bg-gray-700 w-20 gap-4 flex justify-center  items-center rounded-lg h-8 text-white transition duration-200 ease-in-out hover:bg-gray-500 hover:text-black hover:scale-105 ${
-            parseInt(id) === 1 ? "opacity-0 " : ""
-          }`}
-        >
-          Anterior
-        </button>
+    <div className="w-full max-w-lg mx-auto px-2 py-4 sm:p-5 rounded-3xl bg-slate-400/80 shadow-xl mt-6 font-semibold dark:bg-gray-700">
 
-        <button
-          onClick={() => navigate(`/list/${parseInt(id) + 1}`)} // Navegar al siguiente Pokémon
-          disabled={parseInt(id) === 1025} // Deshabilitar si estamos en el último Pokémon
-          className={` bg-gray-700 w-20 gap-4 flex justify-center  items-center rounded-lg h-8 text-white transition duration-200 ease-in-out hover:bg-gray-500 hover:text-black hover:scale-105 ${
-            parseInt(id) === 1025 ? "opacity-0 " : ""
-          }`}
-        >
-          Siguiente
-        </button>
+  
+    {/* Info principal */}
+    <div className="bg-gray-700 border-[10px] sm:border-[20px] rounded-3xl">
+      <div className="flex justify-center py-2">
+        <div className="flex justify-center items-center w-10 h-10 sm:w-12 sm:h-12 text-white text-base sm:text-xl font-bold border bg-gray-500 rounded-full">
+          {pokemonDetails.id}
+        </div>
+      </div>
+  
+      {/* Nombre */}
+      <h1 className="text-white tracking-widest text-2xl sm:text-3xl font-bold capitalize text-center py-2">
+        {pokemonDetails.name}
+      </h1>
+  
+      {/* Imagen del pokemon la animada o sino la normal  */}
+      <img
+        src={
+          pokemonDetails.sprites.versions["generation-v"]["black-white"]
+            .animated.front_default ??
+          pokemonDetails.sprites.other["official-artwork"].front_default
+            
+        }
+        alt={pokemonDetails.name}
+        className="mx-auto  max-w-[100px] sm:max-w-[320px] h-[150px]"
+      />
+  
+      {/* Características */}
+      <div className="text-black border mt-3 bg-gray-300 rounded-lg ">
+        <h2 className="text-center text-xl font-bold ">Características:</h2>
+        <p className="text-base sm:text-lg">Peso: {(pokemonDetails.weight / 10).toFixed(1)} kg</p>
+        <p className="text-base sm:text-lg">Altura: {(pokemonDetails.height / 10).toFixed(1)} m</p>
+        <h2 className="text-center text-xl font-bold mt-2">Tipo:</h2>
+        <div className="flex justify-around flex-wrap mt-1">
+          {pokemonDetails?.types?.map((type, id) => (
+            <p key={id} className="capitalize text-base sm:text-lg font-semibold">
+              {type.type.name}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
-  );
-}
+  
+    {/* Stats */}
+    <div className="text-black mt-2 w-full rounded-xl bg-slate-300 text-sm font-semibold p-3">
+      {pokemonDetails?.stats?.map((sta, id) => (
+        <div className="mb-3" key={id}>
+          <div className="flex items-center gap-2">
+            <span className="w-24 sm:w-32 capitalize">{sta?.stat?.name}</span>
+            <progress className="flex-1 h-3" value={sta.base_stat} max={150}></progress>
+            <span className="w-10 text-right">{sta.base_stat}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  
+    {/* Botones */}
+    <div className="flex justify-between mt-4 px-2">
+      <button
+        onClick={() => navigate(`/list/${parseInt(id) - 1}`)}
+        disabled={parseInt(id) === 1}
+        className={`bg-gray-700 w-24 h-9 text-xs sm:text-sm rounded-lg text-white flex justify-center items-center transition hover:bg-gray-500 hover:text-black hover:scale-105 dark:bg-slate-900 ${
+          parseInt(id) === 1 ? "opacity-0" : ""
+        }`}
+      >
+        Anterior
+      </button>
+  
+      <button
+        onClick={() => navigate(`/list/${parseInt(id) + 1}`)}
+        disabled={parseInt(id) === 1025}
+        className={`bg-gray-700 w-24 h-9 text-xs sm:text-sm rounded-lg text-white flex justify-center items-center transition hover:bg-gray-500 hover:text-black hover:scale-105 dark:bg-slate-900 ${
+          parseInt(id) === 1025 ? "opacity-0" : ""
+        }`}
+      >
+        Siguiente
+      </button>
+    </div>
+  </div>
+  
+
+  )}  

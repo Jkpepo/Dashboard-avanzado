@@ -17,7 +17,8 @@ function Login() {
   // Se usa <SignIn /> con `path="/login"` para mantener la autenticación en rutas locales
 // evitando el uso de rutas externas por defecto de Clerk.
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className=" text-center text-4xl font-bold  mb-8">¡Bienvenido a Pokedash!</h1>
       <SignIn path="/login" routing="path" />
     </div>
   );

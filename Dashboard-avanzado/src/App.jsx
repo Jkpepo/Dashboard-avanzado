@@ -1,21 +1,21 @@
 
 import "./App.css";
+import Info from "./pages/Info";
 import Login from "./auth/Login";
 import { Faqs } from "./pages/Faqs";
 import { Index } from "./pages/index";
 import { Layout } from "./pages/Layout";
+import {Security} from "./pages/Security";
+import { Settings } from "./pages/Settings";
 import SpiderChart from "./componentsApp/SpiderChart";
 import { PokemonProvider } from "./context/UseContext";
+import { ProtectedRoutes } from "./auth/ProtectedRoutes";
 import PokemonRanking from "./componentsApp/PokeRanking";
 import PokemonBattle from './componentsApp/PokemonBattle';
 import PokemoCardList from './componentsApp/PokemonCardList';
 import { PokemonDetails } from "./componentsApp/PokemonDetails";
 import BarChartComponent from './componentsApp/BarChartComponent';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ProtectedRoutes } from "./auth/ProtectedRoutes";
-import { Settings } from "./pages/Settings";
-import {Security} from "./pages/Security";
-import Info from "./pages/Info";
 
 function App() {
   return (
