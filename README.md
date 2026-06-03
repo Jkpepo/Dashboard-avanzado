@@ -5,6 +5,8 @@
 
 Pokedash es un dashboard interactivo inspirado en el universo Pokémon. Permite visualizar Pokémon, filtrar por tipo, ver detalles, y explorar alguna información del anime. Incluye autenticación segura, diseño responsive y modo claro/oscuro.
 
+Enlace:pokedash.netlify.app
+
 ---
 
 ## 🚀 Tecnologías usadas
